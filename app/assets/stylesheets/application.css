@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ body {
+  padding-top: 100px;
+  position:relative;
+  background-image: url("background/body/body_bkg_01.jpg");
+  background-repeat: repeat-x;
+}
+#logo {
+ position:absolute;
+ left: 20px;
+ top: 10px;
+ border: 2px solid #fff;
+ z-index: 2000;
+}
