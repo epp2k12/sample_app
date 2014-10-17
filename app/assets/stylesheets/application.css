@@ -25,10 +25,46 @@
  top: 10px;
  border: 2px solid #fff;
  z-index: 2000;
+
+}
+#logo:hover{
+	 opacity: 0.7;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+    background: #ffffff;
 }
 .center {
   text-align: center;
 }
 .center h1 {
 	text-align:center;
+}
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
 }
