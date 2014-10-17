@@ -26,3 +26,9 @@
  border: 2px solid #fff;
  z-index: 2000;
 }
+.center {
+  text-align: center;
+}
+.center h1 {
+	text-align:center;
+}
