@@ -68,3 +68,51 @@ footer ul li {
   float: left;
   margin-left: 15px;
 }
+
+/* sidebar */
+
+aside {
+  color: #ffffff;
+}
+aside img {
+  padding: 0px;
+  border: 1px solid white;
+}
+
+.gravatar {
+  float: left;
+  margin: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+input {
+  height: auto !important;
+}
+
+.sign-up {
+  border: 1px solid #ffffff;
+}
+
+#error_explanation {
+  color: red;
+}
+
+#error_explanation ul {
+  color: red;
+  margin: 0 0 30px 0;
+}
+
+.field_with_errors, .has-error {
+  color: red;
+}
