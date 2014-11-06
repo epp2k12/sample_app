@@ -4,6 +4,7 @@
        
         <%= gravatar_for @user %>
         <h3><%= @user.name %></h3><%= @user.email %>
-      
+      	<h5>session id : <%= session[:user_id] %></h5>
+      	<h5>user name : <%= current_user.name %></h5> 
    </aside>
 </div>
