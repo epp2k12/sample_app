@@ -5,6 +5,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.6'
 gem 'bcrypt', '~> 3.1.9'
 
+# Gemfile for Rails 3, Rails 4, Sinatra, and Merb
+gem 'will_paginate', '~> 3.0'
+gem 'bootstrap-will_paginate'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets

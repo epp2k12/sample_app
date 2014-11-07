@@ -2,7 +2,7 @@
 <div class="row">
   <aside class="col-md-4">
        
-        <%= gravatar_for @user %>
+        <%= gravatar_for @user, 200 %>
         <h3><%= @user.name %></h3><%= @user.email %>
       	<h5>session id : <%= session[:user_id] %></h5>
       	<h5>user name : <%= current_user.name %></h5> 
