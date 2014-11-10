@@ -15,7 +15,7 @@
 
 	<div id="navbarCollapse" class="collapse navbar-collapse">
 	<% if logged_in? %>
-	<p class="navbar-text">Logged in as : <%= current_user.name %></p>
+	<p class="navbar-text">Logged in as : <%= @current_user.name %></p>
 	<% end %>
 		<ul class="nav navbar-nav pull-right">
 		 
@@ -47,7 +47,8 @@
 
 
 	</div>
-	<!--
-	<h1 style="color:#ffffff;text-align:center"><%= request.url %></h1>
-	-->
+
+
+	
+
 	</header>
