@@ -6,7 +6,8 @@ class SessionsController < ApplicationController
   	user = User.find_by(email: params[:session][:email])
   	if user && user.authenticate(params[:session][:password])
   		log_in user
-      params[:session][:remember_me] == 1 ? remember(user) : forget(user) # this will create permanent cookies this method is in sessions helper
+      
+      params[:session][:remember_me] == '1' ? remember(user) : forget(user)
   		redirect_back_to(user)
   	else
   		flash.now[:danger] = 'Invalid email/password combination'	
