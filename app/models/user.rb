@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-
+	has_many :microposts, dependent: :destroy
 	attr_accessor :remember_token
 
 	validates :name, presence: true, length: { maximum: 50 }
@@ -35,6 +35,13 @@ class User < ActiveRecord::Base
 
 	def forget
 		update_attribute( :remember_digest, nil )
+	end
+
+	def feed
+		# id is an attribute of User model associated in its table id 
+		# check that only posts of the current user is shown
+		# NOTE: we can only use current user on views
+		Micropost.where("user_id = ?", self.id)
 	end
 
  

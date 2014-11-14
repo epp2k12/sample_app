@@ -14,6 +14,8 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
+    # @microposts = @user.microposts.paginate(page: params[:page], :per_page => 5)
+    @microposts = @user.microposts.paginate(:per_page => 15, :page => params[:page])
   end
 
   def create
@@ -57,13 +59,17 @@ class UsersController < ApplicationController
   		params.require(:user).permit(:name, :email, :password, :password_confirmation)
   	end
 
-    def logged_in_only
-      unless logged_in?
-        store_forwarding_url
-        flash[:danger]="Please log in."
-        redirect_to login_url
-      end
-    end
+    # since we will be using this also at the microposts controller
+    # we will be transfering this method at application_controller.rb which is the base
+    # controller for all controllers
+    # ------------------------------------
+    # def logged_in_only
+    #  unless logged_in?
+    #    store_forwarding_url
+    #    flash[:danger]="Please log in."
+    #    redirect_to login_url
+    #  end
+    # end
 
     def current_user_only
       @user = User.find(params[:id])
