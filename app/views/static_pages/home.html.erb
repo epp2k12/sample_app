@@ -10,7 +10,14 @@
     </aside>
     <div class="col-md-8">
     <h3>Micropost Feed</h3>
-		    <%= render 'shared/feed' %>
+    
+    <% if @feed_items.any? %>
+    <ol class="microposts">
+    <!-- this will know to look micropost partial because it contains Micropost object -->
+      <%= render @feed_items %> 
+    </ol>
+    <% end %>
+
 	     <%= will_paginate @feed_items %>
     </div>
   </div>
