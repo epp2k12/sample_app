@@ -10,29 +10,8 @@
     </aside>
     <div class="col-md-8">
     <h3>Micropost Feed</h3>
-
-    <% if @feed_items.any? %>
-    
-    <ol class="microposts">
-		<% @feed_items.each do |feed| %>
-		<li id="micropost-<%= feed.id %>">
-		<%= link_to gravatar_for(feed.user, 50), feed.user %>
-		<span class="user"><%= link_to feed.user.name, feed.user %></span>
-		<span class="content"><%= feed.content %></span>
-		<span class="timestamp">
-		Posted <%= time_ago_in_words(feed.created_at) %> ago.
-		</span>
-		</li>
-		<% if current_user?(feed.user) %>
-		<%= link_to "delete", feed, method: :delete, data: { confirm: "You sure? "} %>
-		<% end %>
-
-		<% end %>
-	</ol>
-	<%= will_paginate @feed_items %>
-    
-    <% end %>
-
+		    <%= render 'shared/feed' %>
+	     <%= will_paginate @feed_items %>
     </div>
   </div>
 <% else %>
