@@ -36,6 +36,9 @@ gem 'sqlite3'
 #gem 'byebug'
 #gem 'web-console'
 gem 'spring'
+
+gem 'carrierwave', '0.10.0'
+gem 'mini_magick',             '3.8.0'
 end 
 
 group :test do
