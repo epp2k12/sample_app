@@ -214,3 +214,45 @@ span.picture {
 .new_micropost textarea {
   color: black;
 }
+
+
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+}
+.stats a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: #fff;
+  }
+.stats strong {
+    display: block;
+  }
+
+.stats a:hover {
+      text-decoration: none;
+      color: blue;
+    }
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  
+}
+.user_avatars .gravatar {
+    margin: 1px 1px;
+  }
+.user_avatars a {
+    padding: 0;
+  }
+
+.users.follow {
+  padding: 0;
+}
+
+.user_info {
+  border: 1px solid gray;
+  overflow: auto;
+}
