@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20141127011328) do
-=======
+# <<<<<<< HEAD
+# ActiveRecord::Schema.define(version: 20141127011328) do
+# =======
 ActiveRecord::Schema.define(version: 20141128033107) do
->>>>>>> following-users
+# >>>>>>> following-users
 
   create_table "microposts", force: true do |t|
     t.text     "content"
