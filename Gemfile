@@ -9,6 +9,7 @@ gem 'carrierwave', '0.10.0'
 gem 'mini_magick',  '3.8.0'
 gem 'fog',	'1.23.0'
 gem 'figaro'
+gem 'fog-aws'
 # Gemfile for Rails 3, Rails 4, Sinatra, and Merb
 gem 'will_paginate', '~> 3.0'
 gem 'bootstrap-will_paginate'
