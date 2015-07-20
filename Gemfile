@@ -5,7 +5,10 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.6'
 gem 'bcrypt', '~> 3.1.9'
 gem 'faker', '1.4.3'
-
+gem 'carrierwave', '0.10.0'
+gem 'mini_magick',  '3.8.0'
+gem 'fog',	'1.23.0'
+gem 'figaro'
 # Gemfile for Rails 3, Rails 4, Sinatra, and Merb
 gem 'will_paginate', '~> 3.0'
 gem 'bootstrap-will_paginate'
@@ -31,11 +34,11 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'twitter-bootstrap-rails'
 
 group :development, :test do 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-#gem 'byebug'
-#gem 'web-console'
-gem 'spring'
+ # Use sqlite3 as the database for Active Record
+ gem 'sqlite3'
+ #gem 'byebug'
+ #gem 'web-console'
+ gem 'spring'
 end 
 
 group :test do

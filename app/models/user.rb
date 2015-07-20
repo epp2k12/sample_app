@@ -51,7 +51,7 @@ class User < ActiveRecord::Base
 		# Micropost.where("user_id = ?", self.id)
 
 		following_ids = "SELECT followed_id FROM relationships WHERE follower_id = :user_id"
-		Micropost.where("user_id IN(#{following_ids}) OR user_id = :user_id", user_id: id)
+		Micropost.where("user_id IN(#{following_ids}) OR user_id = :user_id", user_id: self.id)
 	end
 
 	# Follows a user

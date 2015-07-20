@@ -13,28 +13,15 @@
     </aside>
     <div class="col-md-8">
     <h3>Micropost Feed</h3>
-
+    
     <% if @feed_items.any? %>
-    
     <ol class="microposts">
-		<% @feed_items.each do |feed| %>
-		<li id="micropost-<%= feed.id %>">
-		<%= link_to gravatar_for(feed.user, 50), feed.user %>
-		<span class="user"><%= link_to feed.user.name, feed.user %></span>
-		<span class="content"><%= feed.content %></span>
-		<span class="timestamp">
-		Posted <%= time_ago_in_words(feed.created_at) %> ago.
-		</span>
-		</li>
-		<% if current_user?(feed.user) %>
-		<%= link_to "delete", feed, method: :delete, data: { confirm: "You sure? "} %>
-		<% end %>
-
-		<% end %>
-	</ol>
-	<%= will_paginate @feed_items %>
-    
+    <!-- this will know to look micropost partial because it contains Micropost object -->
+      <%= render @feed_items %> 
+    </ol>
     <% end %>
+
+	     <%= will_paginate @feed_items %>
 
     </div>
   </div>
@@ -48,7 +35,7 @@
     Ruby on Rails from its <a href="http://www.railstutorial.org/">tutorial site</a>.
   </h2>
 
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <%= link_to "Sign up now!", new_user_path, class: "btn btn-lg btn-primary" %>
 </div>
 
 <%= link_to image_tag("rails.png", alt: "Rails logo"),'http://rubyonrails.org/' %>

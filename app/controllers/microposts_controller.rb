@@ -10,7 +10,8 @@ class MicropostsController < ApplicationController
 		else
 			# should the posting fail the home page still would expect @feed_items instance
 			# so we assign an empty array for @feed_items for failed submissions
-			@feed_items = []  
+			# @feed_items = []
+			@feed_items = current_user.feed.paginate(page: params[:page], :per_page => 10 )
 			render 'static_pages/home'
 		end
 	end
@@ -24,7 +25,7 @@ class MicropostsController < ApplicationController
 private
 
 	def micropost_params
-		params.require(:micropost).permit(:content)
+		params.require(:micropost).permit(:content, :picture)
 	end
 end
 
