@@ -9,6 +9,8 @@ gem 'carrierwave', '0.10.0'
 gem 'mini_magick',  '3.8.0'
 gem 'fog',	'1.3.1'
 gem 'figaro'
+gem 'aws-sdk', '< 2.0'
+
 # gem 'fog-aws'
 
 # Gemfile for Rails 3, Rails 4, Sinatra, and Merb
