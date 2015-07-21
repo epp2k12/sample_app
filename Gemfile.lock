@@ -49,7 +49,7 @@ GEM
     coffee-script (2.4.1)
       coffee-script-source
       execjs
-    coffee-script-source (1.9.1.1)
+    coffee-script-source (1.8.0)
     erubis (2.7.0)
     excon (0.13.4)
     execjs (2.5.2)
@@ -181,7 +181,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.9)
   bootstrap-will_paginate
   carrierwave (= 0.10.0)
-  coffee-rails (~> 4.0.0)
+  coffee-script-source (= 1.8.0)
   faker (= 1.4.3)
   figaro
   fog (= 1.3.1)
