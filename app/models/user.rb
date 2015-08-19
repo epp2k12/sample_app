@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 	
 	has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
 	has_many :followers, through: :passive_relationships, source: :follower 
-
+	has_many :comments, dependent: :destroy
 	attr_accessor :remember_token
 
 	validates :name, presence: true, length: { maximum: 50 }

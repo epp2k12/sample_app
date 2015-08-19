@@ -1,0 +1,11 @@
+alert ("inside destroy.js.erb");
+var mcID = <%= @micropost.id %>;
+alert ("hello im inside" + mcID );
+// $('#comments_section').html("<h1>HELLO WORLD!</h1>");
+// $('#comments_section').html("<%= j render(:partial => 'comments/comments', :locals => {:micropost => @micropost}) %>");
+
+// $('#comment-'+mcID).html("<h1>YES WE DID IT</h1>");
+
+$('#comment-'+mcID).html("<%= j render(:partial => 'comments/comments', :locals => {:micropost => @micropost}) %>");
+// $('.comment-'+mcID).css("border","1px solid red");
+// $("#comment_comment").css("border","3px solid blue");

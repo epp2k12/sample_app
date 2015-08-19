@@ -1,0 +1,36 @@
+			<% comments = micropost.comments.all %>
+ 		 	<% if comments.any? %>
+ 		 		<ol>
+ 		 		<% comments.each do |comment| %>
+ 		 			<li style="overflow: hidden; border: 1px solid orange; margin: 2px 0px">
+
+ 		 			<%= link_to gravatar_for(comment.user, 25), comment.user %>
+ 		 			<span class="user user_name" style="font-size: .8em; color: red;"><%= link_to comment.user.name, comment.user %></span>
+ 		 			<div class="row">
+ 		 			<span style="color: brown; font-size: .9em"><%= comment.comment %></span>
+ 		 			</div>
+
+			        <% if current_user?(comment.user) %>
+ 				    <%= link_to "Delete", comment, method: :delete, remote: true  %>
+  				    <% end %> 
+
+ 		 			</li>
+
+ 		 		<% end %>
+ 		 		</ol>
+ 		 	<% else %>
+ 		 		<h1> NO COMMENTS HERE </h1>
+ 		 	<% end %>
+
+
+<div class="comments_form">
+<% comment = Comment.new %>
+<% f_url = request.url %>
+<%= form_for comment, remote: true do |f| %>
+<%= f.hidden_field :user_id, value: current_user.id %>
+<%= f.hidden_field :micropost_id, value: micropost.id  %>
+<%= f.hidden_field :f_url, value: f_url %>
+<%= f.text_area :comment, placeholder: "komentaryo na!", class: "field comment comment-#{micropost.id}",  :rows => 2 , :cols => 20 %>
+<%= f.submit "Post Comment" %>
+<% end %>
+</div>

@@ -32,6 +32,12 @@
 .logo_container {
   
 }
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0
+}
+
 #logo:hover{
 	 opacity: 0.7;
     filter: alpha(opacity=40); /* For IE8 and earlier */
@@ -181,7 +187,7 @@ a:hover
   }
 .microposts  .content {
     display: block;
-    margin-left: 60px;
+    
     img {
       display: block;
       padding: 5px 0;
@@ -189,7 +195,6 @@ a:hover
   }
 .microposts  .timestamp {
     display: block;
-    margin-left: 60px;
   }
 .microposts  .gravatar {
     float: left;

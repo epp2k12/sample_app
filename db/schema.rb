@@ -11,11 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-# <<<<<<< HEAD
-# ActiveRecord::Schema.define(version: 20141127011328) do
-# =======
-ActiveRecord::Schema.define(version: 20141128033107) do
-# >>>>>>> following-users
+ActiveRecord::Schema.define(version: 20150814015925) do
+
+  create_table "comments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "micropost_id"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["micropost_id"], name: "index_comments_on_micropost_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "microposts", force: true do |t|
     t.text     "content"

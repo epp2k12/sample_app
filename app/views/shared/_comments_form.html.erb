@@ -1,0 +1,17 @@
+<script>
+var mcID = <%= micropost.id %>
+// alert ("the ID"+mcID);
+var tempId = ".comment-"+mcID;
+$('#new_comment').trigger('reset');
+</script>
+
+<div class="comments_form">
+<% f_url = request.url %>
+<%= form_for @comment, remote: true do |f| %>
+<%= f.hidden_field :user_id, value: current_user.id %>
+<%= f.hidden_field :micropost_id, value: micropost.id  %>
+<%= f.hidden_field :f_url, value: f_url %>
+<%= f.text_area :comment, placeholder: "komentaryo na!", class: "field comment comment-#{micropost.id}", id: "hooligans", :rows => 2 , :cols => 20 %>
+<%= f.submit "Post Comment" %>
+<% end %>
+</div>

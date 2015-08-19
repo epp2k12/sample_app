@@ -14,17 +14,20 @@
     <div class="col-md-8">
     <h3>Micropost Feed</h3>
     
-    <% if @feed_items.any? %>
+    <% if @microposts.any? %>
     <ol class="microposts">
+
     <!-- this will know to look micropost partial because it contains Micropost object -->
-      <%= render @feed_items %> 
+    <%= render @microposts %>
+
+
     </ol>
     <% end %>
-
-	     <%= will_paginate @feed_items %>
-
+    <%= will_paginate @microposts %>
     </div>
+
   </div>
+
 <% else %>
 <div class="center jumbotron">
   <h1>Welcome to Bawingksy's RoR</h1>

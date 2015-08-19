@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'comments/new'
+
+  get 'comments/create'
+
+  get 'comments/destroy'
+
   root    'static_pages#home'
   get     'help' => 'static_pages#help'
   get     'about' => 'static_pages#about'
@@ -16,6 +22,7 @@ Rails.application.routes.draw do
   end
   resources :microposts, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  resources :comments
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

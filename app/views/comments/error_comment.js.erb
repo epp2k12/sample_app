@@ -1,0 +1,3 @@
+alert ("hello inside error_post");
+mcID = <%= @micropost.id %>
+$('.comment-'+mcID).attr("placeholder","What do you mean by that?").css("border","1px solid brown").focus();

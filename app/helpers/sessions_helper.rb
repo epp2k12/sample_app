@@ -44,8 +44,18 @@ module SessionsHelper
 
 	def redirect_back_to(user)
 
-		redirect_to(session[:forwarding_url] || user )
-		session.delete(:forwarding_url)
+		# redirect_to(session[:forwarding_url] || user )
+		# session.delete(:forwarding_url)
+
+
+		if not session[:forwarding_url].nil?
+  			redirect_to(:forwarding_url)
+  			session.delete(:forwarding_url)
+		else
+			redirect_to(user)
+		end
+
+
 	end
 
 	def store_forwarding_url

@@ -4,9 +4,10 @@ before_action :logged_in_only
 def create
 	@user=User.find(params[:followed_id])
 	current_user.follow(@user)
+	url=user_url(@user)
 	respond_to do |format|
-		format.html { redirect_to @user}
-		format.js
+		format.html
+        format.js 
 	end
 end
 
@@ -22,9 +23,10 @@ def destroy
 	# at relationships ID given by the parameter
 	@user = Relationship.find(params[:id]).followed 
 	current_user.unfollow(@user)
+	url = user_url(@user)
 	respond_to do |format|
-		format.html { redirect_to @user }
-		format.js
+		format.html 
+		format.js 
 	end
 end
 end
