@@ -1,2 +1,5 @@
-$("#follow_form").html("<%= escape_javascript(render('users/follow'))%>")
-$("#followers").html('<%= @user.followers.count %>')
+userID = <%= @user.id %>;
+alert(userID);
+$("#follow_form-"+userID).html("<%= escape_javascript(render('users/follow'))%>");
+// $("#followers").html('<%= @user.followers.count %>');
+$(".stats_show-"+userID +" #followers" ).html('<%= @user.followers.count %>');

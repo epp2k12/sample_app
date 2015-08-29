@@ -1,7 +1,7 @@
-<%= form_for(@micropost, html: { mulitpart: true}) do |f| %>
+<%= form_for(@micropost, html: { mulitpart: true}, remote: true) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost...", class: "field span12", :rows => 10 %>
+    <%= f.text_area :content, placeholder: "Compose new micropost...", :rows => 10, :id => "micropost_area" %>
   </div>
 
   <span class="picture">
@@ -16,5 +16,9 @@ $('#micropost_picture').bind('change',function() {
 	if(size_in_megabytes > 5) {
 		alert('Maximum file size is 5MB. Please choose a smaller file.');
 	}
+});
+$( document ).ready(function() {
+  // Handler for .ready() called.
+ 
 });
 </script>

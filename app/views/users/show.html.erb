@@ -5,7 +5,7 @@
   	    <%= gravatar_for @user, 150 %>
         <h3><%= @user.name %></h3><%= @user.email %>
     </section>
-     <section class="stats">
+     <section class="stats_show-<%= @user.id %>">
         <%= render 'shared/stat' %>
       </section>
   </aside>

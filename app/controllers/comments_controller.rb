@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
 
   	f_url = params[:comment][:f_url]
     @micropost = Micropost.find_by(id: params[:comment][:micropost_id])
+    @micropost.touch
     # @comments = @micropost.comments.all
   	@comment = Comment.new(comment_params)
   

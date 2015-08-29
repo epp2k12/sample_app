@@ -13,13 +13,15 @@
     </aside>
     <div class="col-md-8">
     <h3>Micropost Feed</h3>
-    
+   
+
     <% if @microposts.any? %>
     <ol class="microposts">
 
     <!-- this will know to look micropost partial because it contains Micropost object -->
+    <div id="micropost_space">
     <%= render @microposts %>
-
+    </div> 
 
     </ol>
     <% end %>

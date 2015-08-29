@@ -1,7 +1,12 @@
 <li>
+
     <%= gravatar_for user, 50 %>
     <%= link_to user.name, user %>
     <% if current_user.admin? && !current_user?(user) %>
        		| <%= link_to "Delete", user, method: :delete, data: { confirm: "Are you sure?"} %>
     <% end %>
+    <br>
+    <div id="follow_unfollow_users_buttons">
+    <%= render 'follow_form', :local => ( @user = user ) if logged_in? %>
+    </div>
 </li>

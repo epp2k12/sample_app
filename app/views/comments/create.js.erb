@@ -5,7 +5,7 @@ alert ("hello im inside" + mcID );
 
 // $('#comment-'+mcID).html("<h1>YES WE DID IT</h1>");
 
-$('#comment-'+mcID).html("<%= j render(:partial => 'comments/comments', :locals => {:micropost => @micropost}) %>");
+$('#comment-'+mcID).html("<%= j render(:partial => 'comments/comments', :locals => {:micropost => @micropost}) %>").fadeIn;
 // $('.comment-'+mcID).css("border","1px solid red");
 // $("#comment_comment").css("border","3px solid blue");
 var tempId = ".comment-"+mcID;

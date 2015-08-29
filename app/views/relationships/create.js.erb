@@ -1,2 +1,7 @@
-$("#follow_form").html("<%= escape_javascript(render('users/unfollow'))%>")
-$("#followers").html('<%= @user.followers.count %>')
+var userID = <%= @user.id %>;
+var mywords = "<%= @mywords %>";
+alert(userID);
+alert("the path - "+ mywords);
+$("#follow_form-"+userID).html("<%= escape_javascript(render('users/unfollow'))%>")
+// $("#followers").html('<%= @user.followers.count %>');
+$(".stats_show-"+userID +" #followers" ).html('<%= @user.followers.count %>');

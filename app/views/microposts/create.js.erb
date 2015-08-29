@@ -1,0 +1,11 @@
+alert("hello im in create micropost");
+<% if @microposts.any? %>
+$("#micropost_space").html("<%= escape_javascript(render @microposts)%>");
+<% end %>
+
+var tempId = "#micropost_area";
+$(tempId).val("").focus();
+
+
+
+// $(".micropost_form").html("<%= escape_javascript(render "shared/micropost_form")%>");

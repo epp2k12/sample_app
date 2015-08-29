@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :admin_user, only: :destroy
 
   def index
-    @users = User.paginate( page: params[:page], :per_page => 5 )
+    @users = User.paginate( page: params[:page], :per_page => 20 )
   end
 
   def new
@@ -13,12 +13,12 @@ class UsersController < ApplicationController
   end
 
   def show
-
   	@user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page], :per_page => 100 )
     # @comment = current_user.comments.build 
     @comment = Comment.new
-    
+    @user_profile = "user_show"
+
   end
 
   def create
@@ -57,14 +57,14 @@ class UsersController < ApplicationController
   end
 
   def following
-    @title = "Following"
+    @title = "Buddies you are stalking!"
     @user = User.find(params[:id])
     @users = @user.following.paginate(page: params[:page])
     render 'show_follow'
   end
 
   def followers
-    @title = "Followers"
+    @title = "Buddies stalking you!"
     @user = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'

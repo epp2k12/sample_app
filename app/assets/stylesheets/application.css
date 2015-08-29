@@ -49,6 +49,23 @@ button::-moz-focus-inner {
 .center h1 {
 	text-align:center;
 }
+
+/* users follow unfollow button */
+#follow_unfollow_users_buttons {
+ 
+  border: 4px solid orange;
+  overflow: auto;
+  
+
+
+}
+#follow_unfollow_users_buttons .btn {
+   
+    border: 3px solid green;
+    font-size: .7em;
+    width: 30%;
+  }
+
 /* footer */
 
 footer {

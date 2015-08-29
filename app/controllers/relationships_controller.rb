@@ -3,6 +3,8 @@ before_action :logged_in_only
 
 def create
 	@user=User.find(params[:followed_id])
+	@mywords = URI(request.referer).path
+	@current_user = current_user 
 	current_user.follow(@user)
 	url=user_url(@user)
 	respond_to do |format|

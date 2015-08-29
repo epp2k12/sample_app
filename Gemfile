@@ -10,6 +10,7 @@ gem 'mini_magick',  '3.8.0'
 gem 'fog',	'1.3.1'
 gem 'figaro'
 gem 'aws-sdk', '< 2.0'
+gem 'remotipart','~> 1.2'
 
 # gem 'fog-aws'
 

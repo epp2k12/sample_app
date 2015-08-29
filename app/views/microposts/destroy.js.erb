@@ -1,0 +1,4 @@
+alert("inside destroy");
+$('.delete_post').bind('ajax:success', function() {  
+        $(this).closest('li').fadeOut();
+});  
